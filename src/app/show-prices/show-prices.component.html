@@ -1,0 +1,53 @@
+<div class="text-right mb-2">
+
+    <button mat-raised-button id="model-cancel-button" class="btn btn-danger" (click)="closeModel()">X</button>
+    
+</div>
+<div class="wrapper ">
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+       
+        <div class="cell">
+         Unit Amount
+        </div>
+        <div class="cell">
+           Recurring
+        </div>
+        <div class="cell">
+            Created On
+        </div>
+    
+       
+      </div>
+      
+      <div class="row" *ngFor="let price of pricesData;let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+       
+        <div class="cell" data-title="Unit Amount"  >
+            {{ price.unit_amount | currency : 'EUR'}}
+           
+        </div>
+        <div class="cell" data-title="Recurring">
+            {{ price.recurring | titlecase}}
+        </div>
+        <div class="cell" data-title="Created On">
+            {{ price.created }}
+        </div>
+      
+       
+      
+      </div>
+          
+    </div>
+</div> 
+  

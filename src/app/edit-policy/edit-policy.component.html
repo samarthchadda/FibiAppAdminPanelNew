@@ -1,0 +1,14 @@
+<div class="form-box">
+    <h2 class="text-center">Edit Policy</h2>
+      <form enctype="multipart/form-data" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="form-group mt-4 mb-4">
+        <!-- <label for="name"> Privacy Policy</label> -->
+        <input class="form-control" id="name" type="hidden" value="1"  name="id" ngModel >
+        <input class="form-control " id="name" type="file" (change)="selectImage($event)" name="policyName" ngModel required>
+      </div>
+      <div class="text-center">
+      <button type="button" class="btn btn-danger mt-2 mr-2" (click)="closeModel()">Cancel</button>
+      <button class="btn btn-primary mt-2 " [disabled]="!form.valid" type="submit" >Change</button>
+      </div>
+    </form>
+  </div>

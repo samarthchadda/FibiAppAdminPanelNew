@@ -1,0 +1,77 @@
+<div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+              <h2>Saloon Services</h2>
+      
+          </div>
+             
+        </div>                     
+      </div> 
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+        
+        <div class="cell">
+         Service Name
+        </div>
+        <div class="cell">
+            Description
+        </div>
+        <div class="cell">
+            Cost
+        </div>
+        <div class="cell">
+            Time Required
+        </div>
+       
+           
+        <div class="cell" >
+            
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let service of services ;let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+       
+        <div class="cell" data-title="Service Name"  >
+            {{ service.serviceName | titlecase}}
+           
+        </div>
+        <div class="cell" data-title="Description">
+            {{ service.description}}
+        </div>
+        <div class="cell" data-title="Cost">
+            {{ service.cost}}
+        </div>  
+        <div class="cell" data-title="Time Required">
+            {{ service.time}} Hours
+        </div>      
+      
+        <div class="cell">
+          <!-- <a [routerLink]="['/faculties/edit/'+ faculty.Phone]"><u>MANAGE</u></a> -->
+        </div>
+      
+      </div>
+          
+    </div>
+</div> 
+  
+
+
+<footer id="modal-footer">
+    <button mat-raised-button id="model-action-button" (click)="actionFunc()">Logout</button>
+    <button mat-raised-button id="model-cancel-button" (click)="closeModel()">Go Back</button>
+    
+</footer>

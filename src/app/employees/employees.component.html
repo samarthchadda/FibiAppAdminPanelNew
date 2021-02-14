@@ -1,0 +1,83 @@
+<div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+              <h2>Employees</h2>
+      
+          </div>
+          <div class="cell2" >
+            <!-- <input type="text" [(ngModel)]="filteredStatus" class="form-control"  placeholder="Find Owner...."> -->
+          </div>    
+          <div class="cell2" >
+              <!-- <button (click)="newFaculties()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true" ></i> New Coaches</button> -->
+          </div>       
+                         
+        </div>                     
+      </div> 
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+        <div class="cell">
+            
+        </div>
+        <div class="cell">
+         Employee Name
+        </div>
+        <div class="cell">
+            Type
+        </div>
+        <div class="cell">
+            Services
+        </div>
+       
+           
+        <div class="cell" >
+            
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let emp of employees ;let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+        <div class="cell" data-title=""  >
+            <img src={{emp.empImg}} alt="onwerImage" class="myImg rounded-circle">
+           
+        </div>
+        <div class="cell" data-title="Employee Name"  >
+            {{ emp.empName | titlecase}}
+           
+        </div>
+        <div class="cell" data-title="Type">
+            {{ emp.empType}}
+        </div>
+        <div class="cell" data-title="Services">
+          <p *ngFor="let e of emp.empServices">{{e.serviceName | titlecase}}</p>
+           
+        </div>      
+      
+        <div class="cell">
+          <!-- <a [routerLink]="['/faculties/edit/'+ faculty.Phone]"><u>MANAGE</u></a> -->
+        </div>
+      
+      </div>
+          
+    </div>
+</div> 
+  
+
+
+<footer id="modal-footer">
+    <!-- <button mat-raised-button id="model-action-button" (click)="actionFunc()">Logout</button> -->
+    <button mat-raised-button id="model-cancel-button" (click)="closeModel()">Go Back</button>
+    
+</footer>

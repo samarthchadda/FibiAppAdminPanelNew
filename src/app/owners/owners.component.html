@@ -1,0 +1,86 @@
+<div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+              <h2>Onwers</h2>
+      
+          </div>
+          <div class="cell2" >
+            <input type="text" [(ngModel)]="filteredStatus" class="form-control"  placeholder="Find Owner....">
+          </div>    
+          <div class="cell2" >
+              <!-- <button (click)="newFaculties()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true" ></i> New Coaches</button> -->
+          </div>       
+                         
+        </div>                     
+      </div> 
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+        <div class="cell">
+            
+        </div>
+        <div class="cell">
+         Owner Name
+        </div>
+        <div class="cell">
+           Email
+        </div>
+        <div class="cell">
+            Phone
+        </div>
+        <div class="cell">
+            Reg. Date
+        </div>
+           
+        <div class="cell" >
+            
+        </div>
+        <div class="cell" >
+            
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let owner of owners | nameFilter : filteredStatus;let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+        <div class="cell" data-title=""  >
+            <img src={{owner.ownerImg}} alt="onwerImage" class="myImg rounded-circle">
+           
+        </div>
+        <div class="cell" data-title="Onwer Name"  >
+            {{ owner.ownerName | titlecase}}
+           
+        </div>
+        <div class="cell" data-title="Email">
+            {{ owner.email}}
+        </div>
+        <div class="cell" data-title="Phone">
+            {{ owner.phone}}
+        </div>
+        <div class="cell" data-title="Reg. Date">
+            {{ owner.registrationDate | date:'medium'}}
+        </div>
+       <div class="cell">
+        <a [routerLink]="['/edit-owner/',owner.ownerId]">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px;"></i>Edit</a>
+        </div>
+
+        <div class="cell">
+          <a (click)="deleteOwner(owner.ownerId)" style="color: red; cursor: pointer;">  <i class="fas fa-trash" aria-hidden="true" style="color: red; font-size: 20px;"></i>Delete</a>
+          </div>
+      
+      </div>
+          
+    </div>
+</div> 
+  

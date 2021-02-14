@@ -1,0 +1,38 @@
+<div class="text-right mb-2">
+
+    <button mat-raised-button id="model-cancel-button" class="btn btn-danger" (click)="closeModel()">X</button>
+    
+</div>
+<table class="table text-center table1">
+    <tr>
+        <th>Reporter Name</th>
+        <th>Email</th>
+       
+        
+    </tr>
+    <tr>
+      <td>{{report.name}}</td>
+      <td>{{report.email}}</td>
+     
+              
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <th>Submitted On</th>
+        
+        
+    </tr>
+    <tr>
+        <td>{{report.phone}}</td>
+      <td>{{report.reportDate | date:'short'}}</td>
+            
+        
+    </tr>
+    
+   
+</table>
+<div class="text-center">
+<h5 >{{report.description}}</h5>
+</div>
+    <img src={{report.screenShot}} alt="Report Image" class="myImg"> 
+

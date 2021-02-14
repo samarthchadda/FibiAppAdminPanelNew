@@ -1,0 +1,370 @@
+
+
+  <div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+              <h2>Legal Policies</h2>
+      
+          </div>
+          <div class="cell2" >
+            <!-- <input type="text" [(ngModel)]="filteredStatus" class="form-control"  placeholder="Find Client...."> -->
+          </div>    
+          <div class="cell2" >
+              <button (click)="reloadPage()" class="btn btn-success"><i class="fas fa-sync" aria-hidden="true" ></i>  Refresh</button>
+          </div>       
+                         
+        </div>                     
+      </div> 
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+      
+        <div class="cell">
+         Policy Name
+        </div>
+        <div class="cell">
+           File 
+        </div>             
+          
+        <div class="cell" >
+            
+        </div>
+        <div class="cell" >
+            
+        </div>
+     
+      </div>
+      
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            1
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["privacyPolicyClientOwnerEng"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["privacyPolicyClientOwnerEng"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('privacyPolicyClientOwnerEng')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+               
+       <div class="cell">
+        <a href='{{this.policies[0]["privacyPolicyClientOwnerEng"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+
+        
+      </div>
+
+       
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            2
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["privacyPolicyClientOwnerEs"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["privacyPolicyClientOwnerEs"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('privacyPolicyClientOwnerEs')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+                 
+       <div class="cell">
+        <a href='{{this.policies[0]["privacyPolicyClientOwnerEs"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+
+        
+      </div>
+
+       
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            3
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["legalNoticeClientOwnerEng"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["legalNoticeClientOwnerEng"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('legalNoticeClientOwnerEng')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+
+        <div class="cell">
+          <a href='{{this.policies[0]["legalNoticeClientOwnerEng"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+  
+
+        
+      </div>
+
+       
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            4
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["legalNoticeClientOwnerEs"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["legalNoticeClientOwnerEs"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('legalNoticeClientOwnerEs')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+
+        <div class="cell">
+          <a href='{{this.policies[0]["legalNoticeClientOwnerEs"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+  
+        
+      </div>
+
+       
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            5
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["tcClientEng"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["tcClientEng"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('tcClientEng')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        
+        <div class="cell">
+          <a href='{{this.policies[0]["tcClientEng"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+      </div>
+
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            6
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["tcOwnerEng"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["tcOwnerEng"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('tcOwnerEng')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+            
+        <div class="cell">
+          <a href='{{this.policies[0]["tcOwnerEng"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+        
+      </div>
+
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            7
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["tcClientEs"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["tcClientEs"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('tcClientEs')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        <div class="cell">
+          <a href='{{this.policies[0]["tcClientEs"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+
+        
+      </div>
+
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            8
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["tcOwnerEs"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["tcOwnerEs"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('tcOwnerEs')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        
+        <div class="cell">
+          <a href='{{this.policies[0]["tcOwnerEs"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+        
+      </div>
+
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            9
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["cookieClientOwnerEng"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["cookieClientOwnerEng"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('cookieClientOwnerEng')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        
+        <div class="cell">
+          <a href='{{this.policies[0]["cookieClientOwnerEng"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+        
+      </div>
+
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            10
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["cookieClientOwnerEs"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["cookieClientOwnerEs"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('cookieClientOwnerEs')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        
+        <div class="cell">
+          <a href='{{this.policies[0]["cookieClientOwnerEs"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+        
+      </div>
+
+      
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            11
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["infoClientOwnerEng"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["infoClientOwnerEng"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('infoClientOwnerEng')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        
+        <div class="cell">
+          <a href='{{this.policies[0]["infoClientOwnerEng"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+        
+      </div>
+
+      
+      <div class="row" >
+      
+        <div class="cell" data-title="S.No."  >
+            12
+           
+        </div>
+       
+        <div class="cell" data-title="Policy Name"  >
+            {{ this.policies[0]["infoClientOwnerEs"]["policyName"] }}
+           
+        </div>
+        <div class="cell" data-title="File">
+            {{ this.policies[0]["infoClientOwnerEs"]["filename"] }}
+        </div>
+      
+       
+       <div class="cell">
+        <a (click)="openModal('infoClientOwnerEs')">  <i class="fas fa-pen" aria-hidden="true" style="color: rgb(61, 162, 224); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+        </div>
+        
+        <div class="cell">
+          <a href='{{this.policies[0]["infoClientOwnerEs"]["filepath"]}}' target="_self" >  <i class="fas fa-cloud-download-alt" aria-hidden="true" style="color: rgb(231, 43, 43); font-size: 20px; cursor: pointer; text-decoration: none;"></i></a>
+          </div>
+        
+      </div>
+          
+    </div>
+</div> 
+  

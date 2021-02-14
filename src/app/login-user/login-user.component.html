@@ -1,0 +1,57 @@
+<div class="div1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                    ADMIN PANEL
+                </div>
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form (ngSubmit)="onSubmit(form)" #form="ngForm" >
+                            <div class="form-group">
+                                <label class="form-control-label">USERNAME/EMAIL</label>
+                                <input type="text" class="form-control" name="email" email [(ngModel)]="email" required #emailRef="ngModel">
+                                <div *ngIf="emailRef.errors?.required  && emailRef.touched" class="errorDiv">
+                                    *Email is required!
+                                </div>
+                                <div *ngIf="!emailRef.valid  && emailRef.touched && emailRef.value!=''" class="errorDiv">
+                                    *Enter Valid Email Format!
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input type="password" class="form-control" i name="password" required ngModel #passRef="ngModel">
+                                <div *ngIf="passRef.errors?.required  && passRef.touched" class="errorDiv">
+                                    *Password is required!
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <a  mat-raised-button (click)="openModalForgotPwd()" style="background-color: transparent;color: cyan;cursor: pointer;">Forgot Password?</a>    
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 login-btm login-button">
+                                        <button type="submit" class="btn btn-outline-primary" [disabled]="!form.valid" >LOGIN</button>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+
+</div>
+
+

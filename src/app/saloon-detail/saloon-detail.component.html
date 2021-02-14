@@ -1,0 +1,44 @@
+<div class="text-right mb-2">
+
+    <button mat-raised-button id="model-cancel-button" class="btn btn-danger" (click)="closeModel()">X</button>
+    
+</div>
+<table class="table text-center table1">
+    <tr>
+        <th>Owner Id</th>
+        <th>Saloon Id</th>
+        <th>Saloon Name</th>
+        
+    </tr>
+    <tr>
+      <td>{{saloonData.ownerId}}</td>
+      <td>{{saloonData.saloonId}}</td>
+      <td>{{saloonData.saloonName}}</td>
+      
+        
+    </tr>
+    <tr>
+        <th>Address </th>
+        <th>Phone</th>
+        <th>Registration Date</th>
+        
+        
+    </tr>
+    <tr>
+      <td>{{saloonData.address}}</td>
+      <td>{{saloonData.phone}}</td>
+      <td>{{saloonData.registrationDate | date:'short'}}</td>
+            
+        
+    </tr>
+   
+</table>
+<div *ngFor="let img of saloonData.saloonPhotos">
+    <img src={{img}} alt="Saloon Image" class="myImg"> 
+</div>
+
+<footer id="modal-footer">
+ 
+    <button mat-raised-button id="model-cancel-button" (click)="closeModel()">Go Back</button>
+    
+</footer>

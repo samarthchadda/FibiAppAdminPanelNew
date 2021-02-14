@@ -1,0 +1,65 @@
+<div class="text-center mt-5">
+    <h2 style="color:darkblue">Edit Client Details: </h2>
+  </div>
+  <div class="shadow p-3 m-4 bg-white rounded">
+  <div class="container px-2  " class="z-index:10; ">
+  <form  (ngSubmit)="onSubmit(form)" #form="ngForm" class="ml-lg-5 pl-lg-5" >
+      <div class="form-group row">
+        
+        <div class="col-sm-10 text-center">
+            <img src={{clientData.clientImg}} alt="clientImage" class="myImg rounded-circle">
+        </div>
+      </div>
+     
+      <div class="form-group row">
+       
+        <div class="col-sm-5">
+            <label for="" style="font-weight: 600;">Client Id</label>
+              <input type="number" class="form-control" id="clientId" placeholder="Client ID" name="clientId" [(ngModel)]="clientData.clientId" readonly required >
+          </div>
+          <div class="col-sm-5">
+            <label for="" style="font-weight: 600;">Client Name</label>
+            <input type="text" class="form-control" id="clientName" placeholder="Client Name" name="clientName" [(ngModel)]="clientData.clientName" required  #clientNameRef="ngModel">
+            <div *ngIf="clientNameRef.errors?.required  && clientNameRef.touched" class="errorDiv">
+              *Name is required!
+          </div>
+          </div>
+        
+        </div>
+        <div class="form-group row">
+      
+            <div class="col-sm-5">
+                <label for="" style="font-weight: 600;">Phone</label>
+                  <input type="number" class="form-control" id="phone" placeholder="Phone" name="phone" [(ngModel)]="clientData.phone" required  #phoneRef="ngModel">
+                  <div *ngIf="phoneRef.errors?.required  && phoneRef.touched" class="errorDiv">
+                    *Phone is required!
+                </div>
+               
+                </div>
+              <div class="col-sm-5">
+                <label for="" style="font-weight: 600;">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email" [(ngModel)]="clientData.email" email required #emailRef="ngModel">
+                <div *ngIf="emailRef.errors?.required  && emailRef.touched" class="errorDiv">
+                  *Email is required!
+              </div>
+              <div *ngIf="!emailRef.valid  && emailRef.touched && emailRef.value!=''" class="errorDiv">
+                  *Enter Valid Email Format!
+              </div>
+              </div>
+    
+        </div>
+             
+       
+        
+      <br>
+  
+      <div class="form-group row">
+        <div class="col-sm-10 text-center">
+          <button type="submit" class="btn" [disabled]="!form.valid" style="background-color: #F06528; width: 200px;border-radius: 10px; color: white;">Save Changes</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  
+    

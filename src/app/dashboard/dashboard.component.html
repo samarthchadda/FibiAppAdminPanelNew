@@ -1,0 +1,149 @@
+<!-- pie chart -->
+<!-- <div class="chart">
+    <h2 class="text-center my-2" >Total Cases</h2>
+ 
+    
+    <canvas baseChart
+    [data]="pieChartData"
+    [labels]="pieChartLabels"
+    [chartType]="pieChartType"
+    [legend]="pieChartLegend" 
+    [colors]="pieChartColors"
+    >        
+    </canvas>
+
+</div> -->
+
+
+<div class="row mt-2">
+  <div class="col-xl-3 col-sm-6 mb-3">
+    <div class="card text-white bg-primary o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fa fa-fw fa-comments"></i>
+        </div>
+        <div class="mr-5"> {{ totalOwners }}</div>
+      </div>
+      <a class="card-footer text-white clearfix small z-1" routerLink="/owners">
+        <span class="float-left"><h6>Total Owners</h6></span>
+        <!-- <span class="float-right">
+          <i class="fa fa-angle-right"></i>
+        </span> -->
+      </a>
+    </div>
+  </div>
+  <div class="col-xl-3 col-sm-6 mb-3">
+    <div class="card text-white bg-warning o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fa fa-fw fa-list"></i>
+        </div>
+        <div class="mr-5">{{ totalSaloons }} </div>
+      </div>
+      <a class="card-footer text-white clearfix small z-1" routerLink="/saloons">
+        <span class="float-left"><h6>Total Saloons</h6></span>
+        <!-- <span class="float-right">
+          <i class="fa fa-angle-right"></i>
+        </span> -->
+      </a>
+    </div>
+  </div>
+  <div class="col-xl-3 col-sm-6 mb-3">
+    <div class="card text-white bg-success o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fa fa-fw fa-shopping-cart"></i>
+        </div>
+        <div class="mr-5">{{ totalAppoints }} </div>
+      </div>
+      <a class="card-footer text-white clearfix small z-1" routerLink="/appointments">
+        <span class="float-left"><h6>Total Bookings</h6></span>
+        <!-- <span class="float-right">
+          <i class="fa fa-angle-right"></i>
+        </span> -->
+      </a>
+    </div>
+  </div>
+  <div class="col-xl-3 col-sm-6 mb-3">
+    <div class="card text-white bg-danger o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fa fa-fw fa-support"></i>
+        </div>
+        <div class="mr-5"> {{ totalClients }}</div>
+      </div>
+      <a class="card-footer text-white clearfix small z-1" routerLink="/customers">
+        <span class="float-left"><h6>Total Clients</h6></span>
+        <!-- <span class="float-right">
+          <i class="fa fa-angle-right"></i>
+        </span> -->
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+<div class="col-md-6">
+      <!-- bar chart (for saloons)-->
+      <div class="chart-wrapper">
+          <canvas baseChart 
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [colors]="barChartColors"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+</div>
+<div class="col-md-6">
+<!-- bar chart (for clients)-->
+<div class="chart-wrapper">
+    <canvas baseChart 
+    [datasets]="barChartData1"
+    [labels]="barChartLabels1"
+    [options]="barChartOptions1"
+    [plugins]="barChartPlugins1"
+    [legend]="barChartLegend1"
+    [colors]="barChartColors1"
+    [chartType]="barChartType1">
+  </canvas>
+</div>
+ 
+</div>
+</div>
+
+
+
+
+<div class="row mt-4">
+  <div class="col-md-3">
+       
+  </div>
+  <div class="col-md-6">
+  <!-- bar chart (for bookings)-->
+  <div class="chart-wrapper">
+      <canvas baseChart 
+      [datasets]="barChartData2"
+      [labels]="barChartLabels2"
+      [options]="barChartOptions2"
+      [plugins]="barChartPlugins2"
+      [legend]="barChartLegend2"
+      [colors]="barChartColors2"
+      [chartType]="barChartType2">
+    </canvas>
+  </div>
+   
+  </div>
+  <div class="col-md-3">
+       
+  </div>
+  </div>
+
+  <br><br>
+
+
+<!-- {{ message | async | json }} -->
+
+<!-- <button class="btn btn-primary" (click)="sendNotification()">Send</button> -->

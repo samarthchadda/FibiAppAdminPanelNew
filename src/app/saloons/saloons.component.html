@@ -1,0 +1,99 @@
+<div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+              <h2>Saloons</h2>
+      
+          </div>
+          <div class="cell2" >
+            <input type="text" [(ngModel)]="saloonName" name="saloonName" (input)="Search()" class="form-control"  placeholder="Find Saloon....">
+          </div>    
+          <div class="cell2" >
+              <!-- <button (click)="newFaculties()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true" ></i> New Coaches</button> -->
+          </div>       
+                         
+        </div>                     
+      </div> 
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell"  (click)="sort('saloonId')" style="width: 80px;">
+         Id &nbsp; <i class="fa fa-sort"></i>
+        </div>
+       
+        <!-- <div class="cell" (click)="sort('saloonName')" style="width: 200px;">
+         Saloon Name &nbsp; <i class="fa fa-sort"></i>
+        </div>
+        <div class="cell"  (click)="sort('ownerName')" style="width: 200px;">
+            Owner Name &nbsp; <i class="fa fa-sort"></i>
+           </div> -->
+           <div class="cell">
+            Saloon Name
+         </div>
+         <div class="cell">
+            Owner Name
+         </div>
+        <div class="cell">
+           Address
+        </div>
+        <div class="cell">
+            Phone
+        </div>
+        <div class="cell">
+            Reg. Date
+        </div>
+        <div class="cell">
+           
+        </div>
+        <div class="cell">
+           
+        </div>
+     
+      </div>
+      
+      <div class="row" *ngFor="let saloon of saloons | nameFilter : saloonName  | orderBy: key: reverse | paginate :{itemsPerPage:3,currentPage:p};let i = index">
+      
+        <div class="cell" data-title="ID"  >
+            <!-- {{i+1}} -->
+            {{ saloon.saloonId }}
+           
+        </div>
+   
+        <div class="cell" data-title="Saloon Name"  >
+            {{ saloon.saloonName | titlecase}}
+           
+        </div>
+        <div class="cell" data-title="Owner Name"  >
+            {{ saloon.ownerName | titlecase}}
+           
+        </div>
+        <div class="cell" data-title="Address">
+            {{ saloon.address}}
+        </div>
+        <div class="cell" data-title="Phone">
+            {{ saloon.phone}}
+        </div>
+        <div class="cell" data-title="Reg. Date">
+            {{ saloon.registrationDate | date:'medium'}}
+        </div>  
+        <div class="cell" >
+            <button class="btn" mat-raised-button (click)="openModal(saloon.saloonId)" style="border-radius: 15px;color: white; font-weight: 500; background-color: tomato; width: 95px; padding-left: 8px;">Employees</button>
+        </div>  
+       
+        <div class="cell">
+            <button class="btn" mat-raised-button (click)="openModalServices(saloon.saloonId)"  style="border-radius: 15px;color: white; font-weight: 500; background-color: rgb(128, 196, 52);; width: 75px; padding-left: 6px;">Services</button>
+        </div>
+      
+      </div>
+
+          
+    </div>
+</div> 
+
+<!-- pagination -->
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+

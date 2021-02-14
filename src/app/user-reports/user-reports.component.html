@@ -1,0 +1,58 @@
+<div class="text-center mt-5">
+    <h2 style="color:darkblue">All Reports </h2>
+  </div>
+  <div class="wrapper ">
+       
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+        <div class="cell">
+            
+        </div>
+        <div class="cell">
+         Submitted By
+        </div>
+        <div class="cell">
+           Description
+        </div>
+          
+        <div class="cell" >
+            
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let report of userReports;let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+        <div class="cell" data-title=""  >
+            <img src={{report.screenShot}} alt="screenShot" class="myImg rounded-circle">
+           
+        </div>
+        <div class="cell" data-title="Submitted By"  >
+            {{ report.name | titlecase}}
+           
+        </div>
+       
+        <div class="cell" data-title="Description">
+            {{ report.description | shorten }}
+        </div>
+       <div class="cell">
+         <button (click)="openDetailsBox(report)" class="btn btn-primary" style="border-radius: 15px;border-color: darkgreen;font-weight:600;color: rgb(36, 153, 36);background-color: lightgreen;">Details</button>
+        </div>
+
+      </div>
+          
+    </div>
+</div> 
+  
+
+
+
+

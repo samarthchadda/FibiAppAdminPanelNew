@@ -1,0 +1,89 @@
+<div class="text-center mt-4">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  
+    <div class="row">
+      <div class="col-md-6">
+  
+      </div>
+      <div class="col-md-4">
+        <input [(ngModel)]="filterString" (ngModelChange)="onFilterChange()" class="form-control" placeholder="&#xF002;   Type and Search Appointments" style="font-family:Arial, FontAwesome" />
+  
+      </div>
+    </div>
+  
+  </div>
+  <div class="table-responsive mt-4" *ngIf="!showAllAppoint">
+    
+    
+      <table class="table text-center" style="width:1300px">
+        <thead>
+          <tr >
+            <th scope="col">S.No</th>
+            <th scope="col">Saloon Id</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Services</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Client Phone</th>
+            <th scope="col">Booking Day</th>  
+            <th scope="col">Booking Time</th>   
+            <th scope="col">Booking Date</th>        
+            <th scope="col">Total Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appoint of filtered;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td><a (click)="openModal(appoint.saloonId)" style="cursor:pointer"> {{appoint.saloonId}}&nbsp; <i class="fas fa-external-link-alt" style="color: darkblue;"></i></a> </td>
+            <td>{{appoint.empName}}</td>
+            <td >{{appoint.serviceName}}</td>
+            <td>{{appoint.clientName}}</td>
+            <td>{{appoint.clientPhone}}</td>
+            <td>{{appoint.bookingDay | titlecase}}</td>
+            <td>{{appoint.bookingTime }}</td>
+            <td>{{appoint.bookingDate}}</td>          
+            <td>{{appoint.totalCost | currency :'EUR'}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="table-responsive mt-4" *ngIf="showAllAppoint">
+    
+    
+      <table class="table text-center" style="width:1300px">
+        <thead>
+          <tr >
+            <th scope="col">S.No</th>
+            <th scope="col">Saloon Id</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Services</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Client Phone</th>
+            <th scope="col">Booking Day</th>  
+            <th scope="col">Booking Time</th>   
+            <th scope="col">Booking Date</th>        
+            <th scope="col">Total Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appoint of allAppointments;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td><a (click)="openModal(appoint.saloonId)" style="cursor:pointer"> {{appoint.saloonId}}&nbsp; <i class="fas fa-external-link-alt" style="color: darkblue;"></i></a> </td>
+            <td>{{appoint.empName}}</td>
+            <td >{{appoint.serviceName}}</td>
+            <td>{{appoint.clientName}}</td>
+            <td>{{appoint.clientPhone}}</td>
+            <td>{{appoint.bookingDay | titlecase}}</td>
+            <td>{{appoint.bookingTime }}</td>
+            <td>{{appoint.bookingDate}}</td>          
+            <td>{{appoint.totalCost | currency :'EUR'}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+      <h1>appointments</h1>
+    </div>
+  
+  
+  
